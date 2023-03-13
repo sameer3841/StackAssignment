@@ -2,6 +2,9 @@ package main.java.edu.desu;
 
 public class Stack<Type> {
 
+    private int maxSize;
+    private int top;
+    private Type[] array;
 
     public Stack(int maxSize){
         //to-do
