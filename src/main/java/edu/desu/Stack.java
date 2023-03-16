@@ -1,5 +1,7 @@
 package main.java.edu.desu;
 
+import java.util.Arrays;
+
 public class Stack<Type> {
 
     // Your attributes for Stack
@@ -22,12 +24,11 @@ public class Stack<Type> {
 
     // This should push a value and set it as top IF THERE IS STILL SPACE INSIDE OF THE STACK
     public void push(Type data){
-        if (top<=maxSize){
+        if (top<maxSize){
             array[top] = data;
             top++;
         }
         else{
-            System.out.println("IT'S FULL");
         }
 
     }
@@ -40,28 +41,29 @@ public class Stack<Type> {
     // This should take off the top of the stack, set the second top as the new top, and return
     // what was taken off
     public Type pop(){
-        Type data = array[top];
-        array[top] = null;
+
+        Type data = array[top-1];
+        array[top-1] = null;
         top--;
         return data;
     }
 
     // Checks if there is nothing inside the stack
     public Boolean isEmpty(){
-        //to-do
-        return null;
+
+        return top == 0;
     }
 
     // Checks if the stack has reached its maxSize
     public Boolean isFull(){
         //to-do
-        return null;
+        return top == maxSize;
     }
 
     // Returns the VALUE at top
     public Type top(){
         //to-do
-        return null;
+        return array[top-1];
     }
 
     // Should return all the values inside stack (top to bottom)
@@ -69,6 +71,10 @@ public class Stack<Type> {
     @Override
     public String toString() {
         //to-do
-        return null;
+        String res = "";
+        for(int x = top-1; x>=0; x--){
+            res += array[x].toString()+"\n";
+        }
+        return res.strip();
     }
 }
