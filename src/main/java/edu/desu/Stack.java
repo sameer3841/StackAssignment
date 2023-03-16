@@ -9,30 +9,41 @@ public class Stack<Type> {
 
     // This is a Constructor
     public Stack(int maxSize){
-        //to-do
+        this.maxSize = maxSize;
+        top = 0;
+        array = (Type[]) new Object[maxSize];
     }
 
     // This should return the maxSize
     public int getMaxSize(){
         //to-do
-        return 0;
+        return maxSize;
     }
 
     // This should push a value and set it as top IF THERE IS STILL SPACE INSIDE OF THE STACK
     public void push(Type data){
-        //to-do
+        if (top<=maxSize){
+            array[top] = data;
+            top++;
+        }
+        else{
+            System.out.println("IT'S FULL");
+        }
+
     }
 
     // Changes the size of the stack
     public void setNewMaxSize(int maxSize){
-        //to-do
+        this.maxSize = maxSize;
     }
 
     // This should take off the top of the stack, set the second top as the new top, and return
     // what was taken off
     public Type pop(){
-        //to-do
-        return null;
+        Type data = array[top];
+        array[top] = null;
+        top--;
+        return data;
     }
 
     // Checks if there is nothing inside the stack
