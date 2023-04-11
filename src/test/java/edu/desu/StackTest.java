@@ -10,10 +10,10 @@ public class StackTest {
     public void isEmptyTest(){
         Stack<String> stringStack = new Stack<>(4);
         //test 01
-        assertTrue(stringStack.isEmpty(),"YOU SHOULD LISTEN TO KONG AND DROP OUT!!!");
+        assertTrue(stringStack.isEmpty(),"test 1");
         //test 02
         stringStack.push("hello");
-        assertFalse(stringStack.isEmpty(),"LEARN TO CODE STUPID!!!");
+        assertFalse(stringStack.isEmpty(),"test 2");
     }
 
     @Test
@@ -22,12 +22,12 @@ public class StackTest {
         //test 01
         int expected = 5;
         int actual = integerStack.getMaxSize();
-        assertEquals(expected,actual,"YOU SHOULD LISTEN TO KONG AND DROP OUT!!!");
+        assertEquals(expected,actual,"test 1");
         //test 02
         integerStack.setNewMaxSize(3);
         expected = 3;
         actual = integerStack.getMaxSize();
-        assertEquals(expected,actual,"LEARN TO CODE STUPID!!!");
+        assertEquals(expected,actual,"test 2");
     }
 
     @Test
@@ -37,24 +37,24 @@ public class StackTest {
         integerStack.push(6);
         int expected = 6;
         int actual = integerStack.top();
-        assertEquals(expected,actual,"YOU SHOULD LISTEN TO KONG AND DROP OUT!!!");
+        assertEquals(expected,actual,"test 1");
         //test 02
         integerStack.push(3);
         integerStack.push(5);
         expected = 5;
         actual = integerStack.top();
-        assertEquals(expected,actual,"LEARN TO CODE STUPID!!!");
+        assertEquals(expected,actual,"test 2");
     }
 
     @Test
     public void isFullTest(){
         Stack<Integer> integerStack = new Stack<>(2);
         //test 01
-        assertFalse(integerStack.isFull(),"YOU SHOULD LISTEN TO KONG AND DROP OUT!!!");
+        assertFalse(integerStack.isFull(),"test 1!");
         //test 02
         integerStack.push(3);
         integerStack.push(2);
-        assertTrue(integerStack.isFull(),"LEARN TO CODE STUPID!!!");
+        assertTrue(integerStack.isFull(),"test 2");
     }
 
     @Test
@@ -68,12 +68,12 @@ public class StackTest {
         integerStack.pop();
         int expected = 9;
         int actual = integerStack.top();
-        assertEquals(expected,actual,"YOU SHOULD LISTEN TO KONG AND DROP OUT!!!");
+        assertEquals(expected,actual,"test 1");
         //test 02
         integerStack.pop();
         expected = 3;
         actual = integerStack.top();
-        assertEquals(expected,actual,"LEARN TO CODE STUPID!!!");
+        assertEquals(expected,actual,"test 2");
     }
 
     @Test
@@ -86,16 +86,16 @@ public class StackTest {
         //test 01
         String expected = "9\n3\n7\n4";
         String actual = integerStack.toString();
-        assertEquals(expected,actual,"YOU SHOULD LISTEN TO KONG AND DROP OUT!!!");
+        assertEquals(expected,actual,"test 1");
         //test 02
         integerStack.pop();
         expected = "3\n7\n4";
         actual = integerStack.toString();
-        assertEquals(expected,actual,"LEARN TO CODE STUPID!!!");
+        assertEquals(expected,actual,"test 2");
 
         Stack<Integer> integerStack1 = new Stack<>(4);
         expected = "";
         actual = integerStack1.toString();
-        assertEquals(expected,actual,"YOU DISAPPOINT ME!!!");
+        assertEquals(expected,actual,"test 3");
     }
 }
